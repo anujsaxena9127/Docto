@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
 import { Button } from "react-native-elements";
-
+import { GetCityData } from "../shared/Functions";
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -24,16 +24,23 @@ class Search extends React.Component {
   onSubmit = () => {
     let { current: field } = this.fieldRef;
     const object = this.props.navigation.getParam("object", "");
+    const city = this.props.navigation.getParam("city", "");
+    const cityIndex = GetCityData(object, city);
+    const cityDoctors = object[cityIndex].doctorList;
 
     if (field.value().length > 0) {
       var searchDataArr = [];
 
-      for (var i = 0; i < object.length; i++) {
+      for (var i = 0; i < cityDoctors.length; i++) {
         if (
-          object[i].name.toUpperCase().includes(field.value().toUpperCase()) ||
-          object[i].type.toUpperCase().includes(field.value().toUpperCase())
+          cityDoctors[i].name
+            .toUpperCase()
+            .includes(field.value().toUpperCase()) ||
+          cityDoctors[i].type
+            .toUpperCase()
+            .includes(field.value().toUpperCase())
         ) {
-          searchDataArr.push(object[i]);
+          searchDataArr.push(cityDoctors[i]);
         }
       }
       this.setState({

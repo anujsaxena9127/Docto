@@ -10,12 +10,14 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
 import doctors from "../shared/Doctors";
+import { GetCityData, GetOptions } from "../shared/Functions";
 import {
   TextField,
   FilledTextField,
   OutlinedTextField
 } from "react-native-material-textfield";
 import { Button } from "react-native-elements";
+import ActionSheet from "react-native-actionsheet";
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
@@ -28,18 +30,33 @@ const images = {
   background2: require("../assets/heading2.png")
 };
 
+const options = ["Mysore", "Mandya", "Bengaluru", "Cancel"];
+
 class Doctors extends Component {
+  // componentDidMount() {
+  //   GetOptions(doctors, options);
+  // }
+
   static navigationOptions = {
     headerShown: false
   };
 
+  showActionSheet = () => {
+    this.ActionSheet.show();
+  };
+
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      city: "Mysore",
+      cityDoctors: ""
+    };
   }
 
   render() {
-    renderDoctors = doctors.map(doctor => {
+    const cityIndex = GetCityData(doctors, this.state.city);
+    const cityDoctors = doctors[cityIndex].doctorList;
+    renderDoctors = cityDoctors.map(doctor => {
       return (
         <View
           key={doctor.id}
@@ -112,8 +129,33 @@ class Doctors extends Component {
             padding: 20
           }}
         >
-          <Text>Location</Text>
+          <TouchableOpacity onPress={this.showActionSheet}>
+            <Text
+              style={{
+                fontSize: 20,
+                alignSelf: "center",
+                color: "blue"
+              }}
+            >
+              Location : {this.state.city}
+            </Text>
+          </TouchableOpacity>
         </View>
+        <ActionSheet
+          ref={o => (this.ActionSheet = o)}
+          // title={<Text style={{ fontSize: 15 }}>Select your city.</Text>}
+          // message="hola"
+          options={options}
+          cancelButtonIndex={3}
+          destructiveButtonIndex={3}
+          onPress={index => {
+            console.log(index, "pressed");
+            console.log(options[index]);
+            if (options[index] != "Cancel") {
+              this.setState({ city: options[index] });
+            }
+          }}
+        />
         {renderDoctors}
       </View>
     );
@@ -134,11 +176,7 @@ class Doctors extends Component {
         <View style={styles.navBar}>
           <TouchableOpacity
             style={(styles.iconRight, { marginRight: 5 })}
-            onPress={() => {
-              this.props.navigation.navigate("Search", {
-                object: doctors
-              });
-            }}
+            onPress={this.showActionSheet}
           >
             <Icon name="map" size={25} color="#fff" />
           </TouchableOpacity>
@@ -146,7 +184,8 @@ class Doctors extends Component {
             style={styles.iconRight}
             onPress={() => {
               this.props.navigation.navigate("Search", {
-                object: doctors
+                object: doctors,
+                city: this.state.city
               });
             }}
           >
