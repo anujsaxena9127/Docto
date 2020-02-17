@@ -31,7 +31,7 @@ export default styles = StyleSheet.create({
   titleStyle: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 30,
     paddingTop: 30
   }
 });

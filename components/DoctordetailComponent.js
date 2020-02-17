@@ -4,7 +4,9 @@ import {
   Text,
   View,
   Dimensions,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView,
+  ScrollView
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
@@ -61,62 +63,58 @@ class Doctordetail extends Component {
   }
 
   renderContent = () => {
-    return (
-      <View style={{ backgroundColor: "#f9f9f9" }}>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-        <Text>Hola header</Text>
-      </View>
-    );
+    const doctorObject = this.props.navigation.getParam("object", "");
+    if (doctorObject != null) {
+      return (
+        <SafeAreaView>
+          <ScrollView>
+            <View style={{ backgroundColor: "#f9f9f9" }}>
+              <Text style={{ fontSize: 25, margin: 10 }}>
+                Expert in : {doctorObject.type}
+              </Text>
+              <Text style={{ fontSize: 25, margin: 10 }}>
+                Education : {doctorObject.education}
+              </Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+              <Text>Hola docot</Text>
+            </View>
+          </ScrollView>
+        </SafeAreaView>
+      );
+    } else {
+      return null;
+    }
   };
 }
 
 export default Doctordetail;
-
-//   render() {
-//     const object = this.props.navigation.getParam("object", "");
-
-//     return (
-//       <View>
-//         <Text>Hola doctor detail.{object.name}</Text>
-//       </View>
-//     );
-//   }
-
-// export default Doctordetail;

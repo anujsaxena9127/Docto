@@ -9,7 +9,7 @@ import {
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
-import doctors from "../shared/Doctors";
+import MysDoctors from "../shared/MysDoctors";
 import {
   TextField,
   FilledTextField,
@@ -39,7 +39,7 @@ class Doctors extends Component {
   }
 
   render() {
-    renderDoctors = doctors.map(doctor => {
+    renderDoctors = MysDoctors.map(doctor => {
       return (
         <View
           key={doctor.id}
@@ -112,6 +112,17 @@ class Doctors extends Component {
     return (
       <View style={{ backgroundColor: "#f9f9f9" }}>
         <Text style={{ minHeight: 20 }}></Text>
+        <View
+          style={{
+            backgroundColor: "#fff",
+            borderRadius: 35,
+            marginTop: 10,
+            marginBottom: 10,
+            padding: 20
+          }}
+        >
+          <Text>Location</Text>
+        </View>
         {renderDoctors}
       </View>
     );
@@ -129,16 +140,28 @@ class Doctors extends Component {
         >
           <Icon name="add" size={25} color="#fff" />
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.iconRight}
-          onPress={() => {
-            this.props.navigation.navigate("Search", {
-              object: doctors
-            });
-          }}
-        >
-          <Icon name="search" size={25} color="#fff" />
-        </TouchableOpacity>
+        <View style={styles.navBar}>
+          <TouchableOpacity
+            style={(styles.iconRight, { marginRight: 5 })}
+            onPress={() => {
+              this.props.navigation.navigate("Search", {
+                object: MysDoctors
+              });
+            }}
+          >
+            <Icon name="map" size={25} color="#fff" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.iconRight}
+            onPress={() => {
+              this.props.navigation.navigate("Search", {
+                object: MysDoctors
+              });
+            }}
+          >
+            <Icon name="search" size={25} color="#fff" />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );

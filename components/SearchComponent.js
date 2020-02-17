@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
+import { Button } from "react-native-elements";
 
 class Search extends React.Component {
   constructor(props) {
@@ -58,12 +59,34 @@ class Search extends React.Component {
               padding: 20
             }}
           >
-            <Text>{data.name}</Text>
-            <Text>{data.type}</Text>
-            <Text>{data.experiance}</Text>
-            <Text>{data.location}</Text>
-            <Text>{data.contact}</Text>
-            <Text>{data.timing}</Text>
+            {/* <TouchableOpacity
+              onPress={() => {
+                console.log(doctor.name + "Pressed");
+                this.props.navigation.navigate("Doctordetail", {
+                  object: doctor
+                });
+              }}
+            > */}
+            <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
+              {data.name}
+            </Text>
+            <Text style={{ fontSize: 17 }}>Specilist in : {data.type}</Text>
+            <Text style={{ fontSize: 17 }}>Experiance : {data.experiance}</Text>
+            <Text style={{ fontSize: 17 }}>Location : {data.location}</Text>
+            <Text style={{ fontSize: 17 }}>Contact : {data.contact}</Text>
+            <Text style={{ fontSize: 17 }}>Timing : {data.timing}</Text>
+            <Button
+              title="Details"
+              titleStyle={{ fontSize: 14 }}
+              type="clear"
+              onPress={() => {
+                console.log(data.name + "Pressed");
+                this.props.navigation.navigate("Doctordetail", {
+                  object: data
+                });
+              }}
+            />
+            {/* </TouchableOpacity> */}
           </View>
         );
       } else {

@@ -1,4 +1,4 @@
-const doctors = [
+const MysDoctors = [
   {
     id: 1,
     name: "Sam Tucker",
@@ -6,7 +6,8 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of lungs science"
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of eyes science"
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of Ears science"
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of nose science"
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of lips science"
   },
   {
     id: 6,
@@ -51,7 +56,8 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of Bones science"
   },
   {
     id: 7,
@@ -60,7 +66,8 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of heart science"
   },
   {
     id: 8,
@@ -69,8 +76,9 @@ const doctors = [
     experiance: "12 years",
     location: "Holanagar, Mandya, Karnataka",
     contact: "9867886789",
-    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM"
+    timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
+    education: "Hola institution of Hand science"
   }
 ];
 
-export default doctors;
+export default MysDoctors;
