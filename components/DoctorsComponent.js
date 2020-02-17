@@ -9,7 +9,7 @@ import {
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
-import MysDoctors from "../shared/MysDoctors";
+import doctors from "../shared/Doctors";
 import {
   TextField,
   FilledTextField,
@@ -39,7 +39,7 @@ class Doctors extends Component {
   }
 
   render() {
-    renderDoctors = MysDoctors.map(doctor => {
+    renderDoctors = doctors.map(doctor => {
       return (
         <View
           key={doctor.id}
@@ -51,14 +51,6 @@ class Doctors extends Component {
             padding: 20
           }}
         >
-          {/* <TouchableOpacity
-            onPress={() => {
-              console.log(doctor.name + "Pressed");
-              this.props.navigation.navigate("Doctordetail", {
-                object: doctor
-              });
-            }}
-          > */}
           <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
             {doctor.name}
           </Text>
@@ -78,7 +70,6 @@ class Doctors extends Component {
               });
             }}
           />
-          {/* </TouchableOpacity> */}
         </View>
       );
     });
@@ -145,7 +136,7 @@ class Doctors extends Component {
             style={(styles.iconRight, { marginRight: 5 })}
             onPress={() => {
               this.props.navigation.navigate("Search", {
-                object: MysDoctors
+                object: doctors
               });
             }}
           >
@@ -155,7 +146,7 @@ class Doctors extends Component {
             style={styles.iconRight}
             onPress={() => {
               this.props.navigation.navigate("Search", {
-                object: MysDoctors
+                object: doctors
               });
             }}
           >

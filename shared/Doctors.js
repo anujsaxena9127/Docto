@@ -1,4 +1,4 @@
-const MysDoctors = [
+const Doctors = [
   {
     id: 1,
     name: "Sam Tucker",
@@ -81,4 +81,4 @@ const MysDoctors = [
   }
 ];
 
-export default MysDoctors;
+export default Doctors;

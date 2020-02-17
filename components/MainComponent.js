@@ -33,7 +33,7 @@ const MainNavigator = createBottomTabNavigator({
       }
     }
   },
-  About: {
+  Pharmacy: {
     screen: Pharmacy,
     navigationOptions: {
       tabBarLabel: "Pharmacy",
