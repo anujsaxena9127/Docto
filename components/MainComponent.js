@@ -5,6 +5,7 @@ import DoctorSearch from "./DoctorsearchComponent";
 import Pharmacysearch from "./PharmacyseacrhComponent";
 import Doctordetail from "./DoctordetailComponent";
 import Pharmacydetail from "../components/PharmacydetailComponent";
+import Adddoctor from "../components/AdddoctorComponent";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
@@ -13,7 +14,8 @@ import Icon from "react-native-vector-icons/FontAwesome";
 const DoctorNavigator = createStackNavigator({
   DoctorHome: { screen: Doctors },
   Doctordetail: { screen: Doctordetail },
-  Search: { screen: DoctorSearch }
+  Search: { screen: DoctorSearch },
+  Adddoctor: { screen: Adddoctor}
 });
 
 const PharmacyNavigator = createStackNavigator({

@@ -181,7 +181,7 @@ class Doctors extends Component {
         <TouchableOpacity
           style={styles.iconLeft}
           onPress={() => {
-            console.log("Add");
+            this.props.navigation.navigate("Adddoctor");
           }}
         >
           <Icon name="add" size={25} color="#fff" />
