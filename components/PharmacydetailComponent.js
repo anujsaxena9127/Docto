@@ -100,6 +100,14 @@ class Pharmacydetail extends Component {
             <Text>Hola docot</Text>
             <Text>Hola docot</Text>
             <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
+            <Text>Hola docot</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
