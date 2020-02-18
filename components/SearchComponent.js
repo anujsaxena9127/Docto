@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
-import { Button } from "react-native-elements";
+import { Button, Avatar } from "react-native-elements";
 import { GetCityData } from "../shared/Functions";
 class Search extends React.Component {
   constructor(props) {
@@ -61,27 +61,32 @@ class Search extends React.Component {
             style={{
               backgroundColor: "#fff",
               borderRadius: 35,
-              marginTop: 10,
-              marginBottom: 10,
+              margin: 13,
               padding: 20
             }}
           >
-            {/* <TouchableOpacity
-              onPress={() => {
-                console.log(doctor.name + "Pressed");
-                this.props.navigation.navigate("Doctordetail", {
-                  object: doctor
-                });
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-between"
               }}
-            > */}
-            <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
-              {data.name}
-            </Text>
+            >
+              <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
+                {data.name}
+              </Text>
+              <Avatar
+                rounded
+                source={{
+                  uri:
+                    "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
+                }}
+              />
+            </View>
             <Text style={{ fontSize: 17 }}>Specilist in : {data.type}</Text>
-            <Text style={{ fontSize: 17 }}>Experiance : {data.experiance}</Text>
             <Text style={{ fontSize: 17 }}>Location : {data.location}</Text>
-            <Text style={{ fontSize: 17 }}>Contact : {data.contact}</Text>
             <Text style={{ fontSize: 17 }}>Timing : {data.timing}</Text>
+
             <Button
               title="Details"
               titleStyle={{ fontSize: 14 }}
@@ -93,7 +98,6 @@ class Search extends React.Component {
                 });
               }}
             />
-            {/* </TouchableOpacity> */}
           </View>
         );
       } else {
@@ -109,7 +113,7 @@ class Search extends React.Component {
       <SafeAreaView>
         <ScrollView>
           <View>
-            <View style={{ margin: 5, marginTop: 10 }}>
+            <View style={{ margin: 13, marginTop: 10 }}>
               <OutlinedTextField
                 label="Search Doctors"
                 keyboardType="default"

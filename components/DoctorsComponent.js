@@ -16,7 +16,7 @@ import {
   FilledTextField,
   OutlinedTextField
 } from "react-native-material-textfield";
-import { Button } from "react-native-elements";
+import { Button, Avatar } from "react-native-elements";
 import ActionSheet from "react-native-actionsheet";
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
@@ -65,17 +65,33 @@ class Doctors extends Component {
             borderRadius: 35,
             marginTop: 10,
             marginBottom: 10,
-            padding: 20
+            padding: 20,
+            marginLeft: 13,
+            marginRight: 13
           }}
         >
-          <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
-            {doctor.name}
-          </Text>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between"
+            }}
+          >
+            <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
+              {doctor.name}
+            </Text>
+            <Avatar
+              rounded
+              source={{
+                uri:
+                  "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
+              }}
+            />
+          </View>
           <Text style={{ fontSize: 17 }}>Specilist in : {doctor.type}</Text>
-          <Text style={{ fontSize: 17 }}>Experiance : {doctor.experiance}</Text>
           <Text style={{ fontSize: 17 }}>Location : {doctor.location}</Text>
-          <Text style={{ fontSize: 17 }}>Contact : {doctor.contact}</Text>
           <Text style={{ fontSize: 17 }}>Timing : {doctor.timing}</Text>
+
           <Button
             title="Details"
             titleStyle={{ fontSize: 14 }}
@@ -124,8 +140,7 @@ class Doctors extends Component {
           style={{
             backgroundColor: "#fff",
             borderRadius: 35,
-            marginTop: 10,
-            marginBottom: 10,
+            margin: 13,
             padding: 20
           }}
         >
