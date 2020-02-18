@@ -1,8 +1,10 @@
 import React from "react";
 import Doctors from "./DoctorsComponent";
 import Pharmacy from "./PharmacyComponent";
-import Search from "./SearchComponent";
+import DoctorSearch from "./DoctorsearchComponent";
+import Pharmacysearch from "./PharmacyseacrhComponent";
 import Doctordetail from "./DoctordetailComponent";
+import Pharmacydetail from "../components/PharmacydetailComponent";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
@@ -11,7 +13,13 @@ import Icon from "react-native-vector-icons/FontAwesome";
 const DoctorNavigator = createStackNavigator({
   DoctorHome: { screen: Doctors },
   Doctordetail: { screen: Doctordetail },
-  Search: { screen: Search }
+  Search: { screen: DoctorSearch }
+});
+
+const PharmacyNavigator = createStackNavigator({
+  PharmacyHome: { screen: Pharmacy },
+  Pharmacydetail: { screen: Pharmacydetail },
+  Search: { screen: Pharmacysearch }
 });
 
 const MainNavigator = createBottomTabNavigator({
@@ -25,16 +33,16 @@ const MainNavigator = createBottomTabNavigator({
       ),
       tabBarOptions: {
         tabStyle: {
-          backgroundColor: "#f9f9f9"
+          backgroundColor: "#f5f5f5"
         },
         style: {
-          borderTopColor: "#f9f9f9"
+          borderTopColor: "#f5f5f5"
         }
       }
     }
   },
   Pharmacy: {
-    screen: Pharmacy,
+    screen: PharmacyNavigator,
     navigationOptions: {
       tabBarLabel: "Pharmacy",
       tabBarIcon: ({ tintColor }) => (
@@ -42,10 +50,10 @@ const MainNavigator = createBottomTabNavigator({
       ),
       tabBarOptions: {
         tabStyle: {
-          backgroundColor: "#f9f9f9"
+          backgroundColor: "#f5f5f5"
         },
         style: {
-          borderTopColor: "#f9f9f9"
+          borderTopColor: "#f5f5f5"
         }
       }
     }

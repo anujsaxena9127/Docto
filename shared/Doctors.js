@@ -180,7 +180,7 @@ const Doctors = [
         name: "Sam Tucker B",
         type: "Lungs M",
         experiance: "12 years B",
-        location: "Holanagar, Mandya, Karnataka",
+        location: "Holanagar, Bangbang, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
         education: "Hola institution of lungs science"

@@ -26,8 +26,7 @@ const HEADER_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 88 : 64) : 87;
 const NAV_BAR_HEIGHT = HEADER_HEIGHT - STATUS_BAR_HEIGHT;
 
 const images = {
-  background: require("../assets/headimg.png"), // Put your own image here
-  background2: require("../assets/heading2.png")
+  background: require("../assets/headimg.png") // Put your own image here
 };
 
 const options = ["Mysore", "Mandya", "Bengaluru", "Cancel"];
@@ -82,6 +81,7 @@ class Doctors extends Component {
             </Text>
             <Avatar
               rounded
+              size="medium"
               source={{
                 uri:
                   "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
@@ -90,8 +90,6 @@ class Doctors extends Component {
           </View>
           <Text style={{ fontSize: 17 }}>Specilist in : {doctor.type}</Text>
           <Text style={{ fontSize: 17 }}>Location : {doctor.location}</Text>
-          <Text style={{ fontSize: 17 }}>Timing : {doctor.timing}</Text>
-
           <Button
             title="Details"
             titleStyle={{ fontSize: 14 }}
@@ -113,7 +111,7 @@ class Doctors extends Component {
           headerMinHeight={HEADER_HEIGHT}
           headerMaxHeight={(SCREEN_HEIGHT / 10) * 4}
           extraScrollHeight={20}
-          navbarColor="#ff2974"
+          navbarColor="#8641F7"
           title="Doctors"
           titleStyle={styles.titleStyle}
           backgroundImage={images.background}
@@ -134,7 +132,7 @@ class Doctors extends Component {
 
   renderContent = () => {
     return (
-      <View style={{ backgroundColor: "#f9f9f9" }}>
+      <View style={{ backgroundColor: "#f5f5f5" }}>
         <Text style={{ minHeight: 20 }}></Text>
         <View
           style={{
@@ -149,7 +147,7 @@ class Doctors extends Component {
               style={{
                 fontSize: 20,
                 alignSelf: "center",
-                color: "blue"
+                color: "#33a1f5"
               }}
             >
               Location : {this.state.city}

@@ -3,7 +3,7 @@ import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
 import { Button, Avatar } from "react-native-elements";
 import { GetCityData } from "../shared/Functions";
-class Search extends React.Component {
+class DoctorSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ class Search extends React.Component {
   static navigationOptions = {
     title: "Search",
     headerStyle: {
-      backgroundColor: "#ff2974"
+      backgroundColor: "#8641F7"
     },
     headerTintColor: "#fff"
   };
@@ -37,6 +37,9 @@ class Search extends React.Component {
             .toUpperCase()
             .includes(field.value().toUpperCase()) ||
           cityDoctors[i].type
+            .toUpperCase()
+            .includes(field.value().toUpperCase()) ||
+          cityDoctors[i].location
             .toUpperCase()
             .includes(field.value().toUpperCase())
         ) {
@@ -77,6 +80,7 @@ class Search extends React.Component {
               </Text>
               <Avatar
                 rounded
+                size="medium"
                 source={{
                   uri:
                     "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
@@ -130,4 +134,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default DoctorSearch;

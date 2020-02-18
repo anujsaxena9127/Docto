@@ -15,12 +15,11 @@ import styles from "../shared/Styles";
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
 const STATUS_BAR_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 44 : 20) : 25;
-const HEADER_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 88 : 64) : 95;
+const HEADER_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 88 : 64) : 87;
 const NAV_BAR_HEIGHT = HEADER_HEIGHT - STATUS_BAR_HEIGHT;
 
 const images = {
-  background: require("../assets/headimg.png"), // Put your own image here
-  background2: require("../assets/heading2.png")
+  background: require("../assets/headimg.png") // Put your own image here
 };
 
 class Doctordetail extends Component {
@@ -43,7 +42,7 @@ class Doctordetail extends Component {
           headerMinHeight={HEADER_HEIGHT}
           headerMaxHeight={(SCREEN_HEIGHT / 10) * 4}
           extraScrollHeight={20}
-          navbarColor="#ff2974"
+          navbarColor="#8641F7"
           title={doctorObject.name}
           titleStyle={styles.titleStyle}
           backgroundImage={images.background}
@@ -68,7 +67,7 @@ class Doctordetail extends Component {
       return (
         <SafeAreaView>
           <ScrollView>
-            <View style={{ backgroundColor: "#f9f9f9" }}>
+            <View style={{ backgroundColor: "#f5f5f5" }}>
               <Text style={{ fontSize: 25, margin: 10 }}>
                 Expert in : {doctorObject.type}
               </Text>
