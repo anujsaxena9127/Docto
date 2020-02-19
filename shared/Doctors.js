@@ -11,7 +11,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "7428859102",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of lungs science"
+        education: "Hola institution of lungs science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 2,
@@ -21,7 +23,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of eyes science"
+        education: "Hola institution of eyes science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 3,
@@ -31,7 +35,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Ears science"
+        education: "Hola institution of Ears science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 4,
@@ -41,7 +47,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of nose science"
+        education: "Hola institution of nose science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 5,
@@ -51,7 +59,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of lips science"
+        education: "Hola institution of lips science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 6,
@@ -61,7 +71,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Bones science"
+        education: "Hola institution of Bones science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 7,
@@ -71,7 +83,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of heart science"
+        education: "Hola institution of heart science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 8,
@@ -81,7 +95,9 @@ const Doctors = [
         location: "Holanagar, Mysore, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Hand science"
+        education: "Hola institution of Hand science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       }
     ]
   },
@@ -97,7 +113,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of lungs science"
+        education: "Hola institution of lungs science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 2,
@@ -107,7 +125,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of eyes science"
+        education: "Hola institution of eyes science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 3,
@@ -117,7 +137,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Ears science"
+        education: "Hola institution of Ears science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 4,
@@ -127,7 +149,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of nose science"
+        education: "Hola institution of nose science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 5,
@@ -137,7 +161,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of lips science"
+        education: "Hola institution of lips science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 6,
@@ -147,7 +173,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Bones science"
+        education: "Hola institution of Bones science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 7,
@@ -157,7 +185,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of heart science"
+        education: "Hola institution of heart science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 8,
@@ -167,7 +197,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Hand science"
+        education: "Hola institution of Hand science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       }
     ]
   },
@@ -183,7 +215,9 @@ const Doctors = [
         location: "Holanagar, Bangbang, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of lungs science"
+        education: "Hola institution of lungs science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 2,
@@ -193,7 +227,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of eyes science"
+        education: "Hola institution of eyes science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 3,
@@ -203,7 +239,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Ears science"
+        education: "Hola institution of Ears science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 4,
@@ -213,7 +251,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of nose science"
+        education: "Hola institution of nose science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 5,
@@ -223,7 +263,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of lips science"
+        education: "Hola institution of lips science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 6,
@@ -233,7 +275,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Bones science"
+        education: "Hola institution of Bones science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 7,
@@ -243,7 +287,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of heart science"
+        education: "Hola institution of heart science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       },
       {
         id: 8,
@@ -253,7 +299,9 @@ const Doctors = [
         location: "Holanagar, Mandya, Karnataka",
         contact: "9867886789",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
-        education: "Hola institution of Hand science"
+        education: "Hola institution of Hand science",
+        discription:
+          "A very good doctor, one of the first to show up on this page."
       }
     ]
   }

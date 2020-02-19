@@ -74,11 +74,11 @@ class Doctordetail extends Component {
     const doctorObject = this.props.navigation.getParam("object", "");
     let { current: field1 } = this.fieldRef1;
     let { current: field2 } = this.fieldRef2;
-    if (field1.value().length > 3 && field2.value() > 1) {
+    if (field1.value().length > 3 && field2.value() > 5) {
       Linking.openURL(
         "whatsapp://send?text=Hello!! I Want to Make an Appointment. My name is " +
           field1.value() +
-          "and my age is " +
+          " and my age is " +
           field2.value() +
           "&phone=+91" +
           doctorObject.contact
@@ -86,6 +86,20 @@ class Doctordetail extends Component {
     } else {
       alert("Please Enter the details properly!!!");
     }
+  };
+
+  dialCall = () => {
+    const pharmacyObject = this.props.navigation.getParam("object", "");
+
+    let phoneNumber = "";
+
+    if (Platform.OS === "android") {
+      phoneNumber = "tel:" + pharmacyObject.contact;
+    } else {
+      phoneNumber = "telprompt:" + pharmacyObject.contact;
+    }
+
+    Linking.openURL(phoneNumber);
   };
 
   renderContent = () => {
@@ -96,39 +110,69 @@ class Doctordetail extends Component {
           <ScrollView>
             <View style={{ backgroundColor: "#f2f2f2" }}>
               <View style={{ marginTop: 13 }}>
-                <Text style={{ fontSize: 25, margin: 10 }}>
-                  Expert in : {doctorObject.type}
+                <Text style={styles.detail}>
+                  Specilisation in : {doctorObject.type}
                 </Text>
-                <Text style={{ fontSize: 25, margin: 10 }}>
+                <Text style={styles.detail}>
                   Education : {doctorObject.education}
                 </Text>
+                <Text style={styles.detail}>
+                  Experiance : {doctorObject.experiance}
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 17,
+                    marginLeft: 15,
+                    marginRight: 15,
+                    marginTop: 5,
+                    marginBottom: 5,
+                    color: "#33a1f5"
+                  }}
+                  onPress={this.dialCall}
+                >
+                  +91 {doctorObject.contact} -
+                  <Icon
+                    name="phone"
+                    type="evilicon"
+                    color="#33a1f5"
+                    size={20}
+                    // onPress={() => {
+                    //   alert("Added to cart.");
+                    // }}
+                  />
+                </Text>
+                <Text style={styles.detail}>
+                  Timing : {doctorObject.timing}
+                </Text>
+                <Text style={styles.detail}>{doctorObject.discription}</Text>
               </View>
-              <View
-                style={{
-                  backgroundColor: "#fff",
-                  margin: 13,
-                  borderRadius: 35,
-                  padding: 10,
-                  paddingTop: 20
-                }}
-              >
+              <View style={styles.renderCard}>
                 <View style={{ margin: 13, marginTop: 10 }}>
+                  <Text
+                    style={{
+                      fontSize: 25,
+                      fontWeight: "bold",
+                      marginBottom: 10
+                    }}
+                  >
+                    Create Appointment
+                  </Text>
+                  <Text style={{ minHeight: 10 }}></Text>
                   <OutlinedTextField
                     label="Enter your name"
                     keyboardType="default"
-                    // onSubmitEditing={this.onSubmit}
                     ref={this.fieldRef1}
-                    // autoFocus={true}
+                    title="Name should have more the three characters."
                   />
+                  <Text style={{ minHeight: 10 }}></Text>
                   <OutlinedTextField
                     label="Enter your age"
                     keyboardType="number-pad"
-                    // onSubmitEditing={this.onSubmit}
                     ref={this.fieldRef2}
-                    // autoFocus={true}
+                    title="Age should be greater then 5"
                   />
                 </View>
-                <View style={{ margin: 35, marginTop: 10, maxHeight: 40 }}>
+                <View style={{ margin: 33, marginTop: 10, maxHeight: 40 }}>
                   <Button
                     onPress={this.sendOnWhatsApp}
                     title="Make WhatsApp Appointment"

@@ -46,18 +46,7 @@ class Pharmacy extends Component {
     const cityPharmacy = pharmacy[cityIndex].pharmacyList;
     renderPharmacy = cityPharmacy.map(pharm => {
       return (
-        <View
-          key={pharm.pharmacyId}
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: 35,
-            marginTop: 10,
-            marginBottom: 10,
-            padding: 20,
-            marginLeft: 13,
-            marginRight: 13
-          }}
-        >
+        <View key={pharm.pharmacyId} style={styles.renderCard}>
           <View
             style={{
               flex: 1,
@@ -86,9 +75,11 @@ class Pharmacy extends Component {
             titleStyle={{ fontSize: 14 }}
             type="clear"
             onPress={() => {
-              console.log(pharm.name + "Pressed");
+              console.log(pharm.pharmacyName + "Pressed");
+              console.log(pharmacy[cityIndex].deliveryBoyNo);
               this.props.navigation.navigate("Pharmacydetail", {
-                object: pharm
+                object: pharm,
+                deliveryBoyNo: pharmacy[cityIndex].deliveryBoyNo
               });
             }}
           />

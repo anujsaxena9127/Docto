@@ -2,6 +2,7 @@ const pharmacy = [
   {
     cityId: 1,
     cityName: "Mysore",
+    deliveryBoyNo: "4123567891",
     pharmacyList: [
       {
         pharmacyId: 1,
@@ -15,25 +16,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -49,25 +50,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -83,25 +84,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -117,25 +118,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mys",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       }
@@ -144,6 +145,7 @@ const pharmacy = [
   {
     cityId: 2,
     cityName: "Mandya",
+    deliveryBoyNo: "4123567892",
     pharmacyList: [
       {
         pharmacyId: 1,
@@ -157,25 +159,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -191,25 +193,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -225,25 +227,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -259,25 +261,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Mya",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       }
@@ -286,6 +288,7 @@ const pharmacy = [
   {
     cityId: 3,
     cityName: "Bengaluru",
+    deliveryBoyNo: "4123567893",
     pharmacyList: [
       {
         pharmacyId: 1,
@@ -299,25 +302,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -333,25 +336,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -367,25 +370,25 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       },
@@ -401,31 +404,31 @@ const pharmacy = [
             medicineId: 1,
             medicineName: "Cetrigine Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 20"
+            priceOfTenTabs: 20
           },
           {
             medicineId: 2,
             medicineName: "Paracitamol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 50"
+            priceOfTenTabs: 50
           },
           {
             medicineId: 3,
             medicineName: "Zintec Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 200"
+            priceOfTenTabs: 200
           },
           {
             medicineId: 4,
             medicineName: "Calpol Ben",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           },
           {
             medicineId: 5,
             medicineName: "Calpol Ben 2",
             concentration: "cetri and petri",
-            priceOfTenTabs: "₹ 120"
+            priceOfTenTabs: 120
           }
         ]
       }

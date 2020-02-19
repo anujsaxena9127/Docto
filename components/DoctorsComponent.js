@@ -57,18 +57,7 @@ class Doctors extends Component {
     const cityDoctors = doctors[cityIndex].doctorList;
     renderDoctors = cityDoctors.map(doctor => {
       return (
-        <View
-          key={doctor.id}
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: 35,
-            marginTop: 10,
-            marginBottom: 10,
-            padding: 20,
-            marginLeft: 13,
-            marginRight: 13
-          }}
-        >
+        <View key={doctor.id} style={styles.renderCard}>
           <View
             style={{
               flex: 1,

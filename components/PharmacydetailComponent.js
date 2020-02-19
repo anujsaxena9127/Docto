@@ -96,22 +96,7 @@ class Pharmacydetail extends Component {
 
     renderMedicines = pharmacyObject.medicineList.map(medicine => {
       return (
-        <View
-          key={medicine.medicineId}
-          style={{
-            flex: 1,
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexDirection: "row",
-            backgroundColor: "#fff",
-            borderRadius: 35,
-            marginTop: 10,
-            marginBottom: 10,
-            padding: 20,
-            marginLeft: 13,
-            marginRight: 13
-          }}
-        >
+        <View key={medicine.medicineId} style={styles.renderMedicineCards}>
           <View style={{ flex: 3 }}>
             <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
               {medicine.medicineName}
@@ -120,34 +105,21 @@ class Pharmacydetail extends Component {
               Concentration: {medicine.concentration}
             </Text>
             <Text style={{ fontSize: 17 }}>
-              Price of 10 tablets: {medicine.priceOfTenTabs}
+              Price of 10 tablets: ₹{medicine.priceOfTenTabs}
             </Text>
           </View>
           <View style={{ flex: 1 }}>
             <Button
               type="clear"
               onPress={() => {
-                alert("Added one Leaf to cart.");
+                alert("Added 10 tablets/one bottel to cart.");
                 var currentCartData = this.state.cart;
-                var dataToBePushed = medicine.medicineName;
+                var dataToBePushed = medicine;
                 var newCartData = currentCartData.concat(dataToBePushed);
                 this.setState({ cart: newCartData });
               }}
               title="Add to cart"
             ></Button>
-            {/* <Icon
-              name="shopping-cart"
-              type="evilicon"
-              color="#575757"
-              size={30}
-              onPress={() => {
-                alert("Added one Leaf to cart.");
-                var currentCartData = this.state.cart;
-                var dataToBePushed = medicine.medicineName;
-                var newCartData = currentCartData.concat(dataToBePushed);
-                this.setState({ cart: newCartData });
-              }}
-            /> */}
           </View>
         </View>
       );
@@ -217,9 +189,9 @@ class Pharmacydetail extends Component {
                 type="evilicon"
                 color="#33a1f5"
                 size={20}
-                onPress={() => {
-                  alert("Added to cart.");
-                }}
+                // onPress={() => {
+                //   alert("Added to cart.");
+                // }}
               />
             </Text>
             <Text style={{ fontSize: 22, margin: 13 }}>
@@ -245,10 +217,15 @@ class Pharmacydetail extends Component {
         <TouchableOpacity
           style={styles.iconLeft}
           onPress={() => {
+            const deliveryBoyNo = this.props.navigation.getParam(
+              "deliveryBoyNo",
+              ""
+            );
             console.log("Cart");
             if (this.state.cart.length > 0) {
               this.props.navigation.navigate("Cart", {
-                cartData: this.state.cart
+                cartData: this.state.cart,
+                deliveryBoyNo: deliveryBoyNo
               });
             } else {
               alert("Cart empty.");
@@ -262,13 +239,6 @@ class Pharmacydetail extends Component {
             value={this.state.cart.length}
           />
         </TouchableOpacity>
-        {/* <View style={styles.navBar}>
-          <TouchableOpacity
-            style={(styles.iconRight, { marginRight: 5 })}
-            onPress={this.showActionSheet}
-          >
-            <Icon name="map" size={25} color="#fff" />
-          </TouchableOpacity> */}
         <TouchableOpacity
           style={styles.iconRight}
           onPress={() => {
@@ -280,7 +250,6 @@ class Pharmacydetail extends Component {
         >
           <Icon name="search" size={25} color="#fff" />
         </TouchableOpacity>
-        {/* </View> */}
       </View>
     </View>
   );

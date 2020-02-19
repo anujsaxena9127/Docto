@@ -12,6 +12,14 @@ export function GetOptions(object, arr) {
   }
 }
 
+export function GetCartTotalPrice(object) {
+  var cartTotal = 0;
+  for (var i = 0; i < object.length; i++) {
+    cartTotal += object[i].priceOfTenTabs;
+  }
+  return cartTotal;
+}
+
 export function GetMedicineNames(object, city, searchKey) {
   var medicineNmaesArray = [];
   for (var i = 0; i < object.length; i++) {
