@@ -65,7 +65,7 @@ class Adddoctor extends Component {
     return (
       <SafeAreaView>
         <ScrollView>
-          <View style={{ backgroundColor: "#f5f5f5" }}>
+          <View style={{ backgroundColor: "#f2f2f2" }}>
             <Text>Hola docot</Text>
             <Text>Hola docot</Text>
             <Text>Hola docot</Text>

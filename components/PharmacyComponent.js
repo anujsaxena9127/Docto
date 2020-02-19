@@ -122,7 +122,7 @@ class Pharmacy extends Component {
 
   renderContent = () => {
     return (
-      <View style={{ backgroundColor: "#f5f5f5" }}>
+      <View style={{ backgroundColor: "#f2f2f2" }}>
         <Text style={{ minHeight: 20 }}></Text>
         <View
           style={{

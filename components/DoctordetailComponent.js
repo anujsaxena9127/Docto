@@ -94,7 +94,7 @@ class Doctordetail extends Component {
       return (
         <SafeAreaView>
           <ScrollView>
-            <View style={{ backgroundColor: "#f5f5f5" }}>
+            <View style={{ backgroundColor: "#f2f2f2" }}>
               <View style={{ marginTop: 13 }}>
                 <Text style={{ fontSize: 25, margin: 10 }}>
                   Expert in : {doctorObject.type}

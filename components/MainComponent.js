@@ -5,6 +5,7 @@ import DoctorSearch from "./DoctorsearchComponent";
 import Pharmacysearch from "./PharmacyseacrhComponent";
 import Doctordetail from "./DoctordetailComponent";
 import Pharmacydetail from "../components/PharmacydetailComponent";
+import Pharmacycart from "../components/PharmacycartComponent";
 import Adddoctor from "../components/AdddoctorComponent";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -15,13 +16,14 @@ const DoctorNavigator = createStackNavigator({
   DoctorHome: { screen: Doctors },
   Doctordetail: { screen: Doctordetail },
   Search: { screen: DoctorSearch },
-  Adddoctor: { screen: Adddoctor}
+  Adddoctor: { screen: Adddoctor }
 });
 
 const PharmacyNavigator = createStackNavigator({
   PharmacyHome: { screen: Pharmacy },
   Pharmacydetail: { screen: Pharmacydetail },
-  Search: { screen: Pharmacysearch }
+  Search: { screen: Pharmacysearch },
+  Cart: { screen: Pharmacycart }
 });
 
 const MainNavigator = createBottomTabNavigator({
@@ -35,10 +37,10 @@ const MainNavigator = createBottomTabNavigator({
       ),
       tabBarOptions: {
         tabStyle: {
-          backgroundColor: "#f5f5f5"
+          backgroundColor: "#f2f2f2"
         },
         style: {
-          borderTopColor: "#f5f5f5"
+          borderTopColor: "#f2f2f2"
         }
       }
     }
@@ -52,10 +54,10 @@ const MainNavigator = createBottomTabNavigator({
       ),
       tabBarOptions: {
         tabStyle: {
-          backgroundColor: "#f5f5f5"
+          backgroundColor: "#f2f2f2"
         },
         style: {
-          borderTopColor: "#f5f5f5"
+          borderTopColor: "#f2f2f2"
         }
       }
     }
