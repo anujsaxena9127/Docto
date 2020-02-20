@@ -85,8 +85,6 @@ class Adddoctor extends Component {
   }
 
   renderContent = () => {
-    // const doctorObject = this.props.navigation.getParam("object", "");
-    // if (doctorObject != null) {
     return (
       <SafeAreaView>
         <ScrollView>
@@ -99,7 +97,6 @@ class Adddoctor extends Component {
           title="Sign Up!"
           onPress={this.handleSubmit}
         />
-            <Text style={{minHeight: 600}}>Hello</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
