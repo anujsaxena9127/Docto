@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import { Text, View, Dimensions, SafeAreaView, ScrollView } from "react-native";
-import { Button } from "react-native-elements";
+import {
+  Text,
+  View,
+  Dimensions,
+  SafeAreaView,
+  ScrollView,
+  Button
+} from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
 import t from "tcomb-form-native";
+
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
@@ -13,14 +20,15 @@ const HEADER_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 88 : 64) : 87;
 const NAV_BAR_HEIGHT = HEADER_HEIGHT - STATUS_BAR_HEIGHT;
 const Form = t.form.Form;
 
+
 const images = {
   background: require("../assets/headimg.png") // Put your own image here
 };
 
 var City = t.enums({
-  Mandya: "Mandya",
-  Mysore: "Mysore",
-  Bangalore: "Bangalore"
+  Mandya: 'Mandya',
+  Mysore: 'Mysore',
+  Bangalore: 'Bangalore'
 });
 
 var User = t.struct({
@@ -31,6 +39,7 @@ var User = t.struct({
   age: t.Number,
   contact: t.Number,
   city: City, // enum
+  Enter_your_clinic_or_hospital_address: t.String,
   i_agree_to_the_docto_terms: t.Boolean
 });
 
@@ -41,8 +50,8 @@ class Adddoctor extends Component {
 
   handleSubmit = () => {
     const value = this._form.getValue(); // use that ref to get the form value
-    console.log("value: ", value);
-  };
+    console.log('value: ', value);
+  }
 
   constructor(props) {
     super(props);
@@ -79,18 +88,7 @@ class Adddoctor extends Component {
     return (
       <SafeAreaView>
         <ScrollView>
-<<<<<<< HEAD
-          <View style={{ backgroundColor: "#f5f5f5" },styles.container2}>
-          <Form 
-          ref={c => this._form = c} // assign a ref
-          type={User} 
-        />
-          <Button
-          title="Sign Up!"
-          onPress={this.handleSubmit}
-        />
-=======
-          <View style={styles.container2}>
+        <View style={styles.container2}>
             <View style={styles.renderCard}>
               <Form
                 ref={c => (this._form = c)} // assign a ref
@@ -114,7 +112,6 @@ class Adddoctor extends Component {
               </View>
             </View>
             <Text style={{ minHeight: 300 }}></Text>
->>>>>>> a7d71012a34b21a71d67d0e208dc198ad4c2ac14
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -124,5 +121,8 @@ class Adddoctor extends Component {
     // }
   };
 }
+
+
+
 
 export default Adddoctor;

@@ -24,13 +24,12 @@ var City = t.enums({
 });
 
 var User = t.struct({
-  name: t.String,
-  specialization: t.String,
-  experience: t.String,
+  pharmacy_name: t.String,
   email: t.maybe(t.String),
-  age: t.Number,
+  Established_in: t.Number,
   contact: t.Number,
   city: City, // enum
+  Enter_your_pharmacy_address: t.String,
   i_agree_to_the_docto_terms: t.Boolean
 });
 
