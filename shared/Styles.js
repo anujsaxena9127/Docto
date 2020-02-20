@@ -8,15 +8,16 @@ const NAV_BAR_HEIGHT = HEADER_HEIGHT - STATUS_BAR_HEIGHT;
 
 export default styles = StyleSheet.create({
   container: {
-    flex: 1,        
-      },
-      container2: {
-        justifyContent: 'center',
-        marginTop: 10,
-        padding: 20,
-        backgroundColor: '#ffffff',
-        padding: 20
-      },
+    flex: 1
+  },
+  container2: {
+    justifyContent: "center",
+    // marginTop: 10,
+    // padding: 20,
+    backgroundColor: "#f5f5f5",
+    paddingTop: 20,
+    paddingBottom: 30
+  },
   contentContainer: {
     flexGrow: 1
   },
