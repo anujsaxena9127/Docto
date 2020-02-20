@@ -1,31 +1,57 @@
 import React, { Component } from "react";
 import {
-  StyleSheet,
   Text,
   View,
   Dimensions,
-  TouchableOpacity,
   SafeAreaView,
-  ScrollView
+  ScrollView,
+  Button
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
+import t from "tcomb-form-native";
+
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
 const STATUS_BAR_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 44 : 20) : 25;
 const HEADER_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 88 : 64) : 87;
 const NAV_BAR_HEIGHT = HEADER_HEIGHT - STATUS_BAR_HEIGHT;
+const Form = t.form.Form;
+
 
 const images = {
   background: require("../assets/headimg.png") // Put your own image here
 };
 
+var City = t.enums({
+  Mandya: 'Mandya',
+  Mysore: 'Mysore',
+  Bangalore: 'Bangalore'
+});
+
+var User = t.struct({
+  name: t.String,
+  specialization: t.String,
+  experience: t.String,
+  email: t.maybe(t.String),
+  age: t.Number,
+  contact: t.Number,
+  city: City, // enum
+  i_agree_to_the_docto_terms: t.Boolean
+  
+});
+
 class Adddoctor extends Component {
   static navigationOptions = {
     headerShown: false
   };
+
+  handleSubmit = () => {
+    const value = this._form.getValue(); // use that ref to get the form value
+    console.log('value: ', value);
+  }
 
   constructor(props) {
     super(props);
@@ -45,7 +71,6 @@ class Adddoctor extends Component {
           titleStyle={styles.titleStyle}
           backgroundImage={images.background}
           backgroundImageScale={1.2}
-          renderNavBar={this.renderNavBar}
           renderContent={this.renderContent}
           containerStyle={styles.container}
           contentContainerStyle={styles.contentContainer}
@@ -65,39 +90,16 @@ class Adddoctor extends Component {
     return (
       <SafeAreaView>
         <ScrollView>
-          <View style={{ backgroundColor: "#f5f5f5" }}>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
-            <Text>Hola docot</Text>
+          <View style={{ backgroundColor: "#f5f5f5" },styles.container2}>
+          <Form 
+          ref={c => this._form = c} // assign a ref
+          type={User} 
+        />
+          <Button
+          title="Sign Up!"
+          onPress={this.handleSubmit}
+        />
+            <Text style={{minHeight: 600}}>Hello</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -106,41 +108,9 @@ class Adddoctor extends Component {
     //   return null;
     // }
   };
-
-  renderNavBar = () => (
-    <View style={styles.navContainer}>
-      <View style={styles.statusBar} />
-      <View style={styles.navBar}>
-        <TouchableOpacity
-          style={styles.iconLeft}
-          onPress={() => {
-            console.log("Add");
-          }}
-        >
-          <Icon name="add" size={25} color="#fff" />
-        </TouchableOpacity>
-        {/* <View style={styles.navBar}>
-          <TouchableOpacity
-            style={(styles.iconRight, { marginRight: 5 })}
-            onPress={this.showActionSheet}
-          >
-            <Icon name="map" size={25} color="#fff" />
-          </TouchableOpacity> */}
-        <TouchableOpacity
-          style={styles.iconRight}
-          onPress={() => {
-            this.props.navigation.navigate("Search", {
-              object: pharmacy,
-              city: this.state.city
-            });
-          }}
-        >
-          <Icon name="search" size={25} color="#fff" />
-        </TouchableOpacity>
-        {/* </View> */}
-      </View>
-    </View>
-  );
 }
+
+
+
 
 export default Adddoctor;
