@@ -40,5 +40,34 @@ export default styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 30,
     paddingTop: 30
+  },
+  detail: {
+    fontSize: 17,
+    marginLeft: 15,
+    marginRight: 15,
+    marginTop: 5,
+    marginBottom: 5
+  },
+  renderCard: {
+    backgroundColor: "#fff",
+    borderRadius: 35,
+    marginTop: 10,
+    marginBottom: 10,
+    padding: 20,
+    marginLeft: 13,
+    marginRight: 13
+  },
+  renderMedicineCards: {
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+    backgroundColor: "#fff",
+    borderRadius: 35,
+    marginTop: 10,
+    marginBottom: 10,
+    padding: 20,
+    marginLeft: 13,
+    marginRight: 13
   }
 });

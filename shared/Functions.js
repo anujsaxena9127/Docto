@@ -8,8 +8,16 @@ export function GetCityData(object, city) {
 
 export function GetOptions(object, arr) {
   for (var i = 0; i < object.length; i++) {
-    arr.push(object[i].cityNmae);
+    arr.push(object[i].cityName);
   }
+}
+
+export function GetCartTotalPrice(object) {
+  var cartTotal = 0;
+  for (var i = 0; i < object.length; i++) {
+    cartTotal += object[i].priceOfTenTabs;
+  }
+  return cartTotal;
 }
 
 export function GetMedicineNames(object, city, searchKey) {

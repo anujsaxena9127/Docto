@@ -117,7 +117,9 @@ class DoctorSearch extends React.Component {
       <SafeAreaView>
         <ScrollView>
           <View>
-            <View style={{ margin: 13, marginTop: 10 }}>
+            <View
+              style={{ margin: 13, marginTop: 10, backgroundColor: "#f2f2f2" }}
+            >
               <OutlinedTextField
                 label="Search Doctors"
                 keyboardType="default"
