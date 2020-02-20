@@ -76,7 +76,6 @@ class Pharmacycart extends React.Component {
   };
 
   render() {
-    const deliveryBoyNo = this.props.navigation.getParam("deliveryBoyNo", "");
     const cartData = this.props.navigation.getParam("cartData", "");
     const cartTotal = GetCartTotalPrice(cartData);
     // console.log(cartTotal);
