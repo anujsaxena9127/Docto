@@ -5,7 +5,7 @@ const Doctors = [
     doctorList: [
       {
         id: 1,
-        name: "Sam Tucker",
+        name: "pam Tucker",
         type: "Lungs",
         experiance: "12 years",
         location: "Holanagar, Mysore, Karnataka",
@@ -17,7 +17,7 @@ const Doctors = [
       },
       {
         id: 2,
-        name: "Ram Tucker",
+        name: "ghansham Tucker",
         type: "Eyes",
         experiance: "12 years",
         location: "Holanagar, Mysore, Karnataka",
@@ -29,7 +29,7 @@ const Doctors = [
       },
       {
         id: 3,
-        name: "Sham Tucker",
+        name: "pilpila Tucker",
         type: "Ears",
         experiance: "12 years",
         location: "Holanagar, Mysore, Karnataka",
@@ -41,7 +41,7 @@ const Doctors = [
       },
       {
         id: 4,
-        name: "Gola Tucker",
+        name: "gilafila Tucker",
         type: "Nose",
         experiance: "12 years",
         location: "Holanagar, Mysore, Karnataka",
@@ -53,7 +53,7 @@ const Doctors = [
       },
       {
         id: 5,
-        name: "Hola Tucker",
+        name: "lalu Tucker",
         type: "Lips",
         experiance: "12 years",
         location: "Holanagar, Mysore, Karnataka",
@@ -65,7 +65,7 @@ const Doctors = [
       },
       {
         id: 6,
-        name: "Pila Tucker",
+        name: "modi Tucker",
         type: "Bones",
         experiance: "12 years",
         location: "Holanagar, Mysore, Karnataka",

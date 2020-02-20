@@ -162,7 +162,10 @@ class Pharmacy extends Component {
         <TouchableOpacity
           style={styles.iconLeft}
           onPress={() => {
-            console.log("Add");
+            this.props.navigation.navigate("Addpharmacy", {
+              // object: pharmacy,
+              // city: this.state.city
+            });
           }}
         >
           <Icon name="add" size={25} color="#fff" />
