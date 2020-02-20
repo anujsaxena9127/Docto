@@ -2,7 +2,7 @@ const pharmacy = [
   {
     cityId: 1,
     cityName: "Mysore",
-    deliveryBoyNo: "4123567891",
+    deliveryBoyNo: "7428859102",
     pharmacyList: [
       {
         pharmacyId: 1,
@@ -145,7 +145,7 @@ const pharmacy = [
   {
     cityId: 2,
     cityName: "Mandya",
-    deliveryBoyNo: "4123567892",
+    deliveryBoyNo: "9661168107",
     pharmacyList: [
       {
         pharmacyId: 1,
@@ -178,6 +178,12 @@ const pharmacy = [
             medicineName: "Calpol Mya",
             concentration: "cetri and petri",
             priceOfTenTabs: 120
+          },
+          {
+            medicineId: 5,
+            medicineName: "Korex Mya",
+            concentration: "cetri and petri pola",
+            priceOfTenTabs: 500
           }
         ]
       },
@@ -288,7 +294,7 @@ const pharmacy = [
   {
     cityId: 3,
     cityName: "Bengaluru",
-    deliveryBoyNo: "4123567893",
+    deliveryBoyNo: "9131687392",
     pharmacyList: [
       {
         pharmacyId: 1,

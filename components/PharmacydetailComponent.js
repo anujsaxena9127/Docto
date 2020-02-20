@@ -112,7 +112,7 @@ class Pharmacydetail extends Component {
             <Button
               type="clear"
               onPress={() => {
-                alert("Added 10 tablets/one bottel to cart.");
+                // alert("Added 10 tablets/one bottel to cart.");
                 var currentCartData = this.state.cart;
                 var dataToBePushed = medicine;
                 var newCartData = currentCartData.concat(dataToBePushed);
@@ -172,15 +172,22 @@ class Pharmacydetail extends Component {
     return (
       <SafeAreaView>
         <ScrollView>
-          <View style={{ backgroundColor: "#f2f2f2" }}>
-            <Text style={{ fontSize: 22, margin: 13 }}>
+          <View style={{ backgroundColor: "#f2f2f2", paddingTop: 10 }}>
+            <Text style={styles.detail}>
               Location: {pharmacyObject.PharmacyLocation}
             </Text>
-            <Text style={{ fontSize: 22, margin: 13 }}>
+            <Text style={styles.detail}>
               Established In: {pharmacyObject.established}
             </Text>
             <Text
-              style={{ fontSize: 22, margin: 13, color: "#33a1f5" }}
+              style={{
+                fontSize: 17,
+                marginLeft: 15,
+                marginRight: 15,
+                marginTop: 5,
+                marginBottom: 5,
+                color: "#33a1f5"
+              }}
               onPress={this.dialCall}
             >
               +91 {pharmacyObject.contact} -
@@ -194,7 +201,7 @@ class Pharmacydetail extends Component {
                 // }}
               />
             </Text>
-            <Text style={{ fontSize: 22, margin: 13 }}>
+            <Text style={styles.detail}>
               Open TIll: {pharmacyObject.openTill}
             </Text>
             <Text style={{ fontSize: 22, margin: 13, fontWeight: "bold" }}>

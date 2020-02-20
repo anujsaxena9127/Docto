@@ -4,10 +4,11 @@ import {
   Text,
   ScrollView,
   SafeAreaView,
-  BackHandler
+  BackHandler,
+  Linking
 } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
-import { Button, Avatar, SocialIcon } from "react-native-elements";
+import { Button, Avatar, SocialIcon, Divider } from "react-native-elements";
 import { GetCartTotalPrice } from "../shared/Functions";
 import Styles from "../shared/Styles";
 class Pharmacycart extends React.Component {
@@ -52,6 +53,28 @@ class Pharmacycart extends React.Component {
     },
     headerTintColor: "#fff"
   };
+
+  fieldRef1 = React.createRef();
+  fieldRef2 = React.createRef();
+
+  sendOnWhatsApp = () => {
+    const deliveryBoyNo = this.props.navigation.getParam("deliveryBoyNo", "");
+    let { current: field1 } = this.fieldRef1;
+    let { current: field2 } = this.fieldRef2;
+    if (field1.value().length > 3 && field2.value().length > 20) {
+      Linking.openURL(
+        "whatsapp://send?text=Hello!! I Want to Make an Appointment. My name is " +
+          field1.value() +
+          " and my address is " +
+          field2.value() +
+          "&phone=+91" +
+          deliveryBoyNo
+      );
+    } else {
+      alert("Please Enter the details properly!!!");
+    }
+  };
+
   render() {
     const deliveryBoyNo = this.props.navigation.getParam("deliveryBoyNo", "");
     const cartData = this.props.navigation.getParam("cartData", "");
@@ -60,16 +83,15 @@ class Pharmacycart extends React.Component {
 
     renderMedicines = cartData.map((medicine, index) => {
       return (
-        <View key={index}>
-          <Text>{medicine.medicineName} x 1</Text>
-        </View>
-      );
-    });
-
-    renderMedicinePrice = cartData.map((price, index) => {
-      return (
-        <View key={index}>
-          <Text>₹ {price.priceOfTenTabs}</Text>
+        <View style={{ flex: 1, flexDirection: "row" }} key={index}>
+          <View style={{ flex: 7 }}>
+            <Text style={{ minHeight: 7 }}></Text>
+            <Text>{medicine.medicineName} * 1</Text>
+          </View>
+          <View style={{ flex: 2 }}>
+            <Text style={{ minHeight: 7 }}></Text>
+            <Text>₹ {medicine.priceOfTenTabs}</Text>
+          </View>
         </View>
       );
     });
@@ -80,32 +102,59 @@ class Pharmacycart extends React.Component {
           <View style={{ backgroundColor: "#f2f2f2", paddingTop: 10 }}>
             <View style={Styles.renderCard}>
               <View style={{ flex: 1, flexDirection: "row" }}>
-                <View style={{ flex: 5 }}>
+                <View style={{ flex: 7 }}>
                   <Text style={{ fontWeight: "bold", fontSize: 18 }}>
                     Medicines
                   </Text>
-                  <Text style={{ minHeight: 7 }}></Text>
-                  {renderMedicines}
-                  <Text style={{ minHeight: 7 }}></Text>
-                  <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                    Cart Total :
-                  </Text>
                 </View>
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 2 }}>
                   <Text style={{ fontWeight: "bold", fontSize: 18 }}>
                     Price
                   </Text>
-                  <Text style={{ minHeight: 7 }}></Text>
-                  {renderMedicinePrice}
-                  <Text style={{ minHeight: 7 }}></Text>
+                </View>
+              </View>
+              {renderMedicines}
+              <Text style={{ minHeight: 7 }}></Text>
+              <View style={{ flex: 1, flexDirection: "row" }}>
+                <View style={{ flex: 7 }}>
                   <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                    ₹ {cartTotal}
+                    Cart Total:
+                  </Text>
+                </View>
+                <View style={{ flex: 2 }}>
+                  <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+                    ₹{cartTotal}
                   </Text>
                 </View>
               </View>
-              <View style={{ margin: 25, marginTop: 30, maxHeight: 40 }}>
+              <View style={{ marginTop: 20 }}>
+                <Text
+                  style={{
+                    fontSize: 15,
+                    fontWeight: "bold",
+                    marginTop: 10
+                  }}
+                >
+                  Place Order
+                </Text>
+                <Text style={{ minHeight: 10 }}></Text>
+                <OutlinedTextField
+                  label="Enter your name"
+                  keyboardType="default"
+                  ref={this.fieldRef1}
+                  title="Name should have more the three characters."
+                />
+                <Text style={{ minHeight: 10 }}></Text>
+                <OutlinedTextField
+                  label="Enter your Address"
+                  keyboardType="default"
+                  ref={this.fieldRef2}
+                  title="Name should have more the twenty characters."
+                />
+              </View>
+              <View style={{ margin: 25, marginTop: 10, maxHeight: 40 }}>
                 <Button
-                  //   onPress={this.sendOnWhatsApp}
+                  onPress={this.sendOnWhatsApp}
                   title="Place order through WhatsApp"
                   type="outline"
                   buttonStyle={{

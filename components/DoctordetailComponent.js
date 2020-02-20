@@ -16,6 +16,7 @@ import styles from "../shared/Styles";
 import { Button, SocialIcon } from "react-native-elements";
 import { OutlinedTextField } from "react-native-material-textfield";
 import Icon from "react-native-vector-icons/FontAwesome";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
@@ -27,6 +28,14 @@ const images = {
   background: require("../assets/headimg.png") // Put your own image here
 };
 
+var today = new Date();
+var todayDate =
+  today.getFullYear() +
+  "/" +
+  parseInt(today.getMonth() + 1) +
+  "/" +
+  today.getDate();
+
 class Doctordetail extends Component {
   static navigationOptions = {
     headerShown: false
@@ -35,9 +44,20 @@ class Doctordetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      screenText: "Hola"
+      isDatePickerVisible: false,
+      todayDate: todayDate
     };
   }
+
+  showDatePicker = () => {
+    this.setState({ isDatePickerVisible: !this.state.isDatePickerVisible });
+  };
+
+  handleConfirm = date => {
+    console.log("A date has been picked: ", date);
+    this.setState({ todayDate: date });
+    this.showDatePicker();
+  };
 
   render() {
     const doctorObject = this.props.navigation.getParam("object", "");
@@ -76,10 +96,14 @@ class Doctordetail extends Component {
     let { current: field2 } = this.fieldRef2;
     if (field1.value().length > 3 && field2.value() > 5) {
       Linking.openURL(
-        "whatsapp://send?text=Hello!! I Want to Make an Appointment. My name is " +
+        "whatsapp://send?text=Hello!! My name is " +
           field1.value() +
           " and my age is " +
           field2.value() +
+          " can I have an appointment with Dr. " +
+          doctorObject.name +
+          " on " +
+          this.state.todayDate +
           "&phone=+91" +
           doctorObject.contact
       );
@@ -172,6 +196,18 @@ class Doctordetail extends Component {
                     title="Age should be greater then 5"
                   />
                 </View>
+                <Button
+                  type="outline"
+                  title={"Select Date: " + this.state.todayDate}
+                  onPress={this.showDatePicker}
+                  buttonStyle={{ margin: 13 }}
+                />
+                <DateTimePickerModal
+                  isVisible={this.state.isDatePickerVisible}
+                  mode="date"
+                  onConfirm={this.handleConfirm}
+                  onCancel={this.showDatePicker}
+                />
                 <View style={{ margin: 33, marginTop: 10, maxHeight: 40 }}>
                   <Button
                     onPress={this.sendOnWhatsApp}

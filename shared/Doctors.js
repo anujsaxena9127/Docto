@@ -9,7 +9,7 @@ const Doctors = [
         type: "Lungs",
         experiance: "12 years",
         location: "Holanagar, Mysore, Karnataka",
-        contact: "7428859102",
+        contact: "9131687392",
         timing: "09:00AM to 01:00PM, 05:00PM to 08:00PM",
         education: "Hola institution of lungs science",
         discription:
