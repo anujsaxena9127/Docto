@@ -5,8 +5,8 @@ import {
   Dimensions,
   SafeAreaView,
   ScrollView,
-  Button
 } from "react-native";
+import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
