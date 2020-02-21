@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-import {
-  Text,
-  View,
-  Dimensions,
-  SafeAreaView,
-  ScrollView,
-} from "react-native";
+import { Text, View, Dimensions, SafeAreaView, ScrollView } from "react-native";
 import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
 import t from "tcomb-form-native";
-
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
@@ -20,15 +13,14 @@ const HEADER_HEIGHT = Platform.OS === "ios" ? (IS_IPHONE_X ? 88 : 64) : 87;
 const NAV_BAR_HEIGHT = HEADER_HEIGHT - STATUS_BAR_HEIGHT;
 const Form = t.form.Form;
 
-
 const images = {
   background: require("../assets/headimg.png") // Put your own image here
 };
 
 var City = t.enums({
-  Mandya: 'Mandya',
-  Mysore: 'Mysore',
-  Bangalore: 'Bangalore'
+  Mandya: "Mandya",
+  Mysore: "Mysore",
+  Bangalore: "Bangalore"
 });
 
 var User = t.struct({
@@ -50,8 +42,8 @@ class Adddoctor extends Component {
 
   handleSubmit = () => {
     const value = this._form.getValue(); // use that ref to get the form value
-    console.log('value: ', value);
-  }
+    console.log("value: ", value);
+  };
 
   constructor(props) {
     super(props);
@@ -88,7 +80,7 @@ class Adddoctor extends Component {
     return (
       <SafeAreaView>
         <ScrollView>
-        <View style={styles.container2}>
+          <View style={styles.container2}>
             <View style={styles.renderCard}>
               <Form
                 ref={c => (this._form = c)} // assign a ref
@@ -121,8 +113,5 @@ class Adddoctor extends Component {
     // }
   };
 }
-
-
-
 
 export default Adddoctor;

@@ -5,12 +5,14 @@ import {
   ScrollView,
   SafeAreaView,
   BackHandler,
-  Linking
+  Linking,
+  TouchableOpacity
 } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
 import { Button, Avatar, SocialIcon, Divider } from "react-native-elements";
 import { GetCartTotalPrice } from "../shared/Functions";
 import Styles from "../shared/Styles";
+import { Icon } from "react-native-vector-icons/FontAwesome";
 class Pharmacycart extends React.Component {
   constructor(props) {
     super(props);
@@ -91,6 +93,16 @@ class Pharmacycart extends React.Component {
             <Text style={{ minHeight: 7 }}></Text>
             <Text>₹ {medicine.priceOfTenTabs}</Text>
           </View>
+          {/* <View style={{ flex: 2 }}>
+            <Text style={{ minHeight: 7 }}></Text>
+            <TouchableOpacity
+              onPress={() => {
+                cartData.splice(index, index);
+              }}
+            >
+              <Text style={{ color: "#33a1f5" }}>Remove</Text>
+            </TouchableOpacity>
+          </View> */}
         </View>
       );
     });
@@ -111,6 +123,9 @@ class Pharmacycart extends React.Component {
                     Price
                   </Text>
                 </View>
+                {/* <View style={{ flex: 2 }}>
+                  <Text></Text>
+                </View> */}
               </View>
               {renderMedicines}
               <Text style={{ minHeight: 7 }}></Text>
@@ -125,6 +140,9 @@ class Pharmacycart extends React.Component {
                     ₹{cartTotal}
                   </Text>
                 </View>
+                {/* <View style={{ flex: 2 }}>
+                  <Text></Text>
+                </View> */}
               </View>
               <View style={{ marginTop: 20 }}>
                 <Text

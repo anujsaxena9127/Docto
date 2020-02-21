@@ -28,6 +28,7 @@ class PharmacySearch extends React.Component {
     const cityIndex = GetCityData(object, city);
     const cityPharmcay = object[cityIndex].pharmacyList;
     const medicineName = object[cityIndex].pharmacyList.medicineList;
+    var pharmacyIndexs = GetMedicineNames(object, city, field.value());
 
     console.log("City Pharmacy List", cityPharmcay);
     console.log("Medicine Name List", medicineName);
@@ -49,15 +50,9 @@ class PharmacySearch extends React.Component {
         }
       }
 
-      //   for (var j = 0; j < pharmacyIndexs.length; j++) {
-      //     for (var k = 0; k < searchDataArr.length; k++) {
-      //       if (pharmacyIndexs[j].pharmacyId == searchDataArr[k].pharmacyId) {
-      //         console.log("already searcjed");
-      //       } else {
-      //         searchDataArr.push(cityPharmcay[pharmacyIndexs[j]]);
-      //       }
-      //     }
-      //   }
+      for (var j = 0; j < pharmacyIndexs.length; j++) {
+        searchDataArr.push(cityPharmcay[pharmacyIndexs[j]]);
+      }
 
       this.setState({
         searchData: searchDataArr
@@ -69,6 +64,7 @@ class PharmacySearch extends React.Component {
 
   render() {
     renderSearch = this.state.searchData.map(data => {
+      const deliveryBoyNo = this.props.navigation.getParam("deliveryBoyNo", "");
       if (this.state.searchData.length > 0) {
         console.log("Printing Doctors");
         return (
@@ -114,8 +110,9 @@ class PharmacySearch extends React.Component {
               type="clear"
               onPress={() => {
                 console.log(data.name + "Pressed");
-                this.props.navigation.navigate("Doctordetail", {
-                  object: data
+                this.props.navigation.navigate("Pharmacydetail", {
+                  object: data,
+                  deliveryBoyNo: deliveryBoyNo
                 });
               }}
             />
@@ -138,7 +135,7 @@ class PharmacySearch extends React.Component {
               style={{ margin: 13, marginTop: 10, backgroundColor: "#f2f2f2" }}
             >
               <OutlinedTextField
-                label="Search Doctors"
+                label="Search Pharmacy, location or medicine"
                 keyboardType="default"
                 onSubmitEditing={this.onSubmit}
                 ref={this.fieldRef}

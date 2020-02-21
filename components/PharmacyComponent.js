@@ -180,9 +180,11 @@ class Pharmacy extends Component {
           <TouchableOpacity
             style={styles.iconRight}
             onPress={() => {
+              const cityIndex = GetCityData(pharmacy, this.state.city);
               this.props.navigation.navigate("Search", {
                 object: pharmacy,
-                city: this.state.city
+                city: this.state.city,
+                deliveryBoyNo: pharmacy[cityIndex].deliveryBoyNo
               });
             }}
           >

@@ -16,6 +16,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
 import { Badge, Button } from "react-native-elements";
+import { GetMedicineCountIncart } from "../shared/Functions";
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
@@ -97,7 +98,7 @@ class Pharmacydetail extends Component {
     renderMedicines = pharmacyObject.medicineList.map(medicine => {
       return (
         <View key={medicine.medicineId} style={styles.renderMedicineCards}>
-          <View style={{ flex: 3 }}>
+          <View style={{ flex: 5 }}>
             <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
               {medicine.medicineName}
             </Text>
@@ -110,7 +111,7 @@ class Pharmacydetail extends Component {
           </View>
           <View style={{ flex: 1 }}>
             <Button
-              type="clear"
+              type="outline"
               onPress={() => {
                 // alert("Added 10 tablets/one bottel to cart.");
                 var currentCartData = this.state.cart;
@@ -118,7 +119,40 @@ class Pharmacydetail extends Component {
                 var newCartData = currentCartData.concat(dataToBePushed);
                 this.setState({ cart: newCartData });
               }}
-              title="Add to cart"
+              title="+"
+              containerStyle={{ maxWidth: 50 }}
+              buttonStyle={{ borderColor: "#f55151" }}
+              titleStyle={{ color: "#f55151" }}
+            ></Button>
+            <Text
+              style={{
+                alignSelf: "center",
+                margin: 2,
+                marginRight: 6,
+                fontSize: 15,
+                color: "#f55151"
+              }}
+            >
+              {GetMedicineCountIncart(this.state.cart, medicine.medicineName)}
+            </Text>
+            <Button
+              type="outline"
+              onPress={() => {
+                for (var i = 0; i < this.state.cart.length; i++) {
+                  var currentCart = this.state.cart;
+                  if (medicine.medicineName == currentCart[i].medicineName) {
+                    currentCart.splice(i, 1);
+                    this.setState({ cart: currentCart });
+                    break;
+                  } else {
+                    console.log("This medicine is not present in the cart");
+                  }
+                }
+              }}
+              title="-"
+              containerStyle={{ maxWidth: 50 }}
+              buttonStyle={{ borderColor: "#f55151" }}
+              titleStyle={{ color: "#f55151" }}
             ></Button>
           </View>
         </View>

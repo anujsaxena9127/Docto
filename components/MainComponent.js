@@ -60,7 +60,8 @@ const MainNavigator = createBottomTabNavigator({
         },
         style: {
           borderTopColor: "#f2f2f2"
-        }
+        },
+        activeTintColor: "#00b020"
       }
     }
   }

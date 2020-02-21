@@ -43,3 +43,13 @@ export function GetMedicineNames(object, city, searchKey) {
   }
   return medicineNmaesArray;
 }
+
+export function GetMedicineCountIncart(cartData, medicineName) {
+  var count = 0;
+  for (var i = 0; i < cartData.length; i++) {
+    if (cartData[i].medicineName == medicineName) {
+      count += 1;
+    }
+  }
+  return count;
+}

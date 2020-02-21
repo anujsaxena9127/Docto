@@ -35,6 +35,12 @@ const pharmacy = [
             medicineName: "Calpol Mys",
             concentration: "cetri and petri",
             priceOfTenTabs: 120
+          },
+          {
+            medicineId: 5,
+            medicineName: "Crocin",
+            concentration: "cetri and petri",
+            priceOfTenTabs: 10
           }
         ]
       },
@@ -252,6 +258,12 @@ const pharmacy = [
             medicineName: "Calpol Mya",
             concentration: "cetri and petri",
             priceOfTenTabs: 120
+          },
+          {
+            medicineId: 5,
+            medicineName: "Gasoline Mya",
+            concentration: "cetri and petri",
+            priceOfTenTabs: 10
           }
         ]
       },
