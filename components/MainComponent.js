@@ -8,6 +8,7 @@ import Pharmacydetail from "../components/PharmacydetailComponent";
 import Pharmacycart from "../components/PharmacycartComponent";
 import Adddoctor from "../components/AdddoctorComponent";
 import Addpharmacy from "../components/AddpharmacyComponent";
+import Medicinesearch from "./MedicinesearchComponent";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
@@ -25,7 +26,8 @@ const PharmacyNavigator = createStackNavigator({
   Pharmacydetail: { screen: Pharmacydetail },
   Search: { screen: Pharmacysearch },
   Cart: { screen: Pharmacycart },
-  Addpharmacy: { screen: Addpharmacy }
+  Addpharmacy: { screen: Addpharmacy },
+  Medicinesearch: { screen: Medicinesearch }
 });
 
 const MainNavigator = createBottomTabNavigator({

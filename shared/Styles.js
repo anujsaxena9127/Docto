@@ -65,7 +65,7 @@ export default styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#fff",
     borderRadius: 35,
-    marginTop: 10,
+    // marginTop: 10,
     marginBottom: 10,
     padding: 20,
     marginLeft: 13,

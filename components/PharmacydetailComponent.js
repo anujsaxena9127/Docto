@@ -109,9 +109,18 @@ class Pharmacydetail extends Component {
               Price of 10 tablets: ₹{medicine.priceOfTenTabs}
             </Text>
           </View>
-          <View style={{ flex: 1 }}>
+          <View
+            style={{
+              flex: 1,
+              borderColor: "#ff8c8c",
+              borderLeftWidth: 1,
+              borderRightWidth: 1,
+              borderRadius: 5,
+              maxWidth: 50
+            }}
+          >
             <Button
-              type="outline"
+              type="clear"
               onPress={() => {
                 // alert("Added 10 tablets/one bottel to cart.");
                 var currentCartData = this.state.cart;
@@ -120,15 +129,15 @@ class Pharmacydetail extends Component {
                 this.setState({ cart: newCartData });
               }}
               title="+"
-              containerStyle={{ maxWidth: 50 }}
-              buttonStyle={{ borderColor: "#f55151" }}
-              titleStyle={{ color: "#f55151" }}
+              containerStyle={{ maxHeight: 50 }}
+              buttonStyle={{ backgroundColor: "#ff8c8c" }}
+              titleStyle={{ color: "#fff", fontSize: 12 }}
             ></Button>
             <Text
               style={{
                 alignSelf: "center",
                 margin: 2,
-                marginRight: 6,
+                // marginRight: 6,
                 fontSize: 15,
                 color: "#f55151"
               }}
@@ -136,7 +145,7 @@ class Pharmacydetail extends Component {
               {GetMedicineCountIncart(this.state.cart, medicine.medicineName)}
             </Text>
             <Button
-              type="outline"
+              type="clear"
               onPress={() => {
                 for (var i = 0; i < this.state.cart.length; i++) {
                   var currentCart = this.state.cart;
@@ -150,9 +159,9 @@ class Pharmacydetail extends Component {
                 }
               }}
               title="-"
-              containerStyle={{ maxWidth: 50 }}
-              buttonStyle={{ borderColor: "#f55151" }}
-              titleStyle={{ color: "#f55151" }}
+              containerStyle={{ maxHeight: 50 }}
+              buttonStyle={{ backgroundColor: "#ff8c8c" }}
+              titleStyle={{ color: "#fff", fontSize: 12 }}
             ></Button>
           </View>
         </View>
@@ -283,9 +292,11 @@ class Pharmacydetail extends Component {
         <TouchableOpacity
           style={styles.iconRight}
           onPress={() => {
-            this.props.navigation.navigate("Search", {
-              object: pharmacy,
-              city: this.state.city
+            const pharmacyObject = this.props.navigation.getParam("object", "");
+            var medicines = pharmacyObject.medicineList;
+            this.props.navigation.navigate("Medicinesearch", {
+              object: medicines
+              // city: this.state.city
             });
           }}
         >
