@@ -198,7 +198,7 @@ class Doctordetail extends Component {
                 </View>
                 <Button
                   type="outline"
-                  title={"Select Date: " + this.state.todayDate}
+                  title={"Date: " + this.state.todayDate}
                   onPress={this.showDatePicker}
                   buttonStyle={{ margin: 13 }}
                 />

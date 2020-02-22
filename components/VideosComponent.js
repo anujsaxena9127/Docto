@@ -38,7 +38,7 @@ class Videos extends Component {
           headerMinHeight={HEADER_HEIGHT}
           headerMaxHeight={(SCREEN_HEIGHT / 10) * 4}
           extraScrollHeight={20}
-          navbarColor="#ff2974"
+          navbarColor="#8641F7"
           title="Videos"
           titleStyle={styles.titleStyle}
           backgroundImage={images.background}
@@ -60,6 +60,19 @@ class Videos extends Component {
   renderContent = () => {
     return (
       <View style={{ backgroundColor: "#f9f9f9" }}>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
+        <Text>Hola header</Text>
         <Text>Hola header</Text>
         <Text>Hola header</Text>
         <Text>Hola header</Text>
