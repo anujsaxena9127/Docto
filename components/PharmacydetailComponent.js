@@ -10,13 +10,16 @@ import {
   Linking,
   Platform,
   BackHandler,
-  Alert
+  Alert,
+  Modal,
+  TouchableHighlight
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ReactNativeParallaxHeader from "react-native-parallax-header";
 import styles from "../shared/Styles";
 import { Badge, Button } from "react-native-elements";
 import { GetMedicineCountIncart } from "../shared/Functions";
+import { OutlinedTextField } from "react-native-material-textfield";
 
 const SCREEN_HEIGHT = Math.round(Dimensions.get("window").height);
 const IS_IPHONE_X = SCREEN_HEIGHT === 812 || SCREEN_HEIGHT === 896;
@@ -36,7 +39,9 @@ class Pharmacydetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cart: []
+      cart: [],
+      modalVisible: false,
+      searchData: []
     };
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
   }
@@ -92,7 +97,116 @@ class Pharmacydetail extends Component {
     return true;
   }
 
+  fieldRef = React.createRef();
+
+  onSubmit = () => {
+    let { current: field } = this.fieldRef;
+    const pharmacyObject = this.props.navigation.getParam("object", "");
+    const medicines = pharmacyObject.medicineList;
+    if (field.value().length > 0) {
+      var searchDataArr = [];
+
+      for (var i = 0; i < medicines.length; i++) {
+        if (
+          medicines[i].medicineName
+            .toUpperCase()
+            .includes(field.value().toUpperCase())
+        ) {
+          searchDataArr.push(medicines[i]);
+        }
+      }
+      this.setState({
+        searchData: searchDataArr
+      });
+    } else {
+      return null;
+    }
+  };
+
   render() {
+    renderSearch = this.state.searchData.map(data => {
+      if (this.state.searchData.length > 0) {
+        console.log("Printing Doctors");
+        return (
+          <View key={data.medicineId} style={styles.renderMedicineCards}>
+            <View style={{ flex: 5 }}>
+              <Text style={{ fontSize: 25, fontWeight: "bold", minHeight: 50 }}>
+                {data.medicineName}
+              </Text>
+              <Text style={{ fontSize: 17 }}>
+                Concentration: {data.concentration}
+              </Text>
+              <Text style={{ fontSize: 17 }}>
+                Price of 10 tablets: ₹{data.priceOfTenTabs}
+              </Text>
+            </View>
+            <View
+              style={{
+                flex: 1,
+                borderColor: "#ff8c8c",
+                borderLeftWidth: 1,
+                borderRightWidth: 1,
+                borderRadius: 5,
+                maxWidth: 50
+              }}
+            >
+              <Button
+                type="clear"
+                onPress={() => {
+                  // alert("Added 10 tablets/one bottel to cart.");
+                  var currentCartData = this.state.cart;
+                  var dataToBePushed = data;
+                  var newCartData = currentCartData.concat(dataToBePushed);
+                  this.setState({ cart: newCartData });
+                }}
+                title="+"
+                containerStyle={{ maxHeight: 50 }}
+                buttonStyle={{ backgroundColor: "#ff8c8c" }}
+                titleStyle={{ color: "#fff", fontSize: 12 }}
+              ></Button>
+              <Text
+                style={{
+                  alignSelf: "center",
+                  margin: 2,
+                  // marginRight: 6,
+                  fontSize: 15,
+                  color: "#f55151"
+                }}
+              >
+                {GetMedicineCountIncart(this.state.cart, data.medicineName)}
+              </Text>
+              <Button
+                type="clear"
+                onPress={() => {
+                  for (var i = 0; i < this.state.cart.length; i++) {
+                    var currentCart = this.state.cart;
+                    if (data.medicineName == currentCart[i].medicineName) {
+                      currentCart.splice(i, 1);
+                      this.setState({ cart: currentCart });
+                      break;
+                    } else {
+                      console.log("This medicine is not present in the cart");
+                    }
+                  }
+                }}
+                title="-"
+                containerStyle={{ maxHeight: 50 }}
+                buttonStyle={{ backgroundColor: "#ff8c8c" }}
+                titleStyle={{ color: "#fff", fontSize: 12 }}
+              ></Button>
+            </View>
+          </View>
+        );
+      } else {
+        console.log("Not Printing Doctors");
+        return (
+          <View>
+            <Text>No doctor Found.</Text>
+          </View>
+        );
+      }
+    });
+
     const pharmacyObject = this.props.navigation.getParam("object", "");
 
     renderMedicines = pharmacyObject.medicineList.map(medicine => {
@@ -210,11 +324,85 @@ class Pharmacydetail extends Component {
   renderContent = () => {
     const pharmacyObject = this.props.navigation.getParam("object", "");
     // console.log(pharmacyObject);
-    console.log("cart", this.state.cart);
+    // console.log("cart", this.state.cart);
     // if (doctorObject != null) {
     return (
       <SafeAreaView>
         <ScrollView>
+          <Modal
+            animationType="slide"
+            transparent={false}
+            visible={this.state.modalVisible}
+            onRequestClose={() => {
+              // Alert.alert("Modal has been closed.");
+              this.setModalVisible(!this.state.modalVisible);
+              // this.setState({ searchData: [] });
+            }}
+          >
+            <SafeAreaView>
+              <ScrollView>
+                <View style={{ backgroundColor: "#f2f2f2" }}>
+                  <View
+                    style={{
+                      backgroundColor: "#8641F7",
+                      minHeight: 65,
+                      alignContent: "flex-start",
+                      justifyContent: "center",
+                      flex: 1,
+                      flexDirection: "row"
+                    }}
+                  >
+                    <View
+                      style={{
+                        flex: 1,
+                        flexDirection: "row",
+                        alignSelf: "center",
+                        marginLeft: 10
+                      }}
+                    >
+                      <TouchableOpacity
+                        onPress={() => {
+                          this.setModalVisible(!this.state.modalVisible);
+                          // this.setState({ searchData: [] });
+                        }}
+                      >
+                        <Icon name="chevron-left" size={35} color="#fff" />
+                      </TouchableOpacity>
+                    </View>
+                    <View
+                      style={{
+                        flex: 9,
+                        flexDirection: "row",
+                        alignSelf: "center"
+                      }}
+                    >
+                      <Text style={{ color: "#fff", fontSize: 25 }}>
+                        Search
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={{
+                        margin: 13,
+                        marginTop: 15,
+                        backgroundColor: "#f2f2f2"
+                      }}
+                    >
+                      <OutlinedTextField
+                        label="Search Medicines In this pharmacy"
+                        keyboardType="default"
+                        onSubmitEditing={this.onSubmit}
+                        ref={this.fieldRef}
+                        autoFocus={true}
+                      />
+                      {renderSearch}
+                    </View>
+                  </View>
+                </View>
+              </ScrollView>
+            </SafeAreaView>
+          </Modal>
           <View style={{ backgroundColor: "#f2f2f2", paddingTop: 10 }}>
             <Text style={styles.detail}>
               Location: {pharmacyObject.PharmacyLocation}
@@ -259,6 +447,9 @@ class Pharmacydetail extends Component {
     //   return null;
     // }
   };
+  setModalVisible(visible) {
+    this.setState({ modalVisible: visible });
+  }
 
   renderNavBar = () => (
     <View style={styles.navContainer}>
@@ -292,13 +483,16 @@ class Pharmacydetail extends Component {
         <TouchableOpacity
           style={styles.iconRight}
           onPress={() => {
-            const pharmacyObject = this.props.navigation.getParam("object", "");
-            var medicines = pharmacyObject.medicineList;
-            this.props.navigation.navigate("Medicinesearch", {
-              object: medicines
-              // city: this.state.city
-            });
+            this.setModalVisible(true);
           }}
+          // onPress={() => {
+          //   const pharmacyObject = this.props.navigation.getParam("object", "");
+          //   var medicines = pharmacyObject.medicineList;
+          //   this.props.navigation.navigate("Medicinesearch", {
+          //     object: medicines
+          //     // city: this.state.city
+          //   });
+          // }}
         >
           <Icon name="search" size={25} color="#fff" />
         </TouchableOpacity>

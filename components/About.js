@@ -3,7 +3,7 @@ import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
 import { Button, Avatar } from "react-native-elements";
 import { GetMedicineCountIncart } from "../shared/Functions";
-class Medicinesearch extends React.Component {
+class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -151,4 +151,4 @@ class Medicinesearch extends React.Component {
   }
 }
 
-export default Medicinesearch;
+export default About;

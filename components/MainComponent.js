@@ -8,7 +8,8 @@ import Pharmacydetail from "../components/PharmacydetailComponent";
 import Pharmacycart from "../components/PharmacycartComponent";
 import Adddoctor from "../components/AdddoctorComponent";
 import Addpharmacy from "../components/AddpharmacyComponent";
-import Medicinesearch from "./MedicinesearchComponent";
+import Videos from "./VideosComponent";
+import About from "./About";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
@@ -18,7 +19,8 @@ const DoctorNavigator = createStackNavigator({
   DoctorHome: { screen: Doctors },
   Doctordetail: { screen: Doctordetail },
   Search: { screen: DoctorSearch },
-  Adddoctor: { screen: Adddoctor }
+  Adddoctor: { screen: Adddoctor },
+  About: { screen: About }
 });
 
 const PharmacyNavigator = createStackNavigator({
@@ -27,7 +29,15 @@ const PharmacyNavigator = createStackNavigator({
   Search: { screen: Pharmacysearch },
   Cart: { screen: Pharmacycart },
   Addpharmacy: { screen: Addpharmacy },
-  Medicinesearch: { screen: Medicinesearch }
+  About: { screen: About }
+});
+
+const VideoNavigator = createStackNavigator({
+  Videos: { screen: Videos },
+  About: { screen: About }
+  // Search: { screen: Pharmacysearch },
+  // Cart: { screen: Pharmacycart },
+  // Addpharmacy: { screen: Addpharmacy }
 });
 
 const MainNavigator = createBottomTabNavigator({
@@ -64,6 +74,24 @@ const MainNavigator = createBottomTabNavigator({
           borderTopColor: "#f2f2f2"
         },
         activeTintColor: "#00b020"
+      }
+    }
+  },
+  Videos: {
+    screen: VideoNavigator,
+    navigationOptions: {
+      tabBarLabel: "Videos",
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name="film" color={tintColor} size={25} />
+      ),
+      tabBarOptions: {
+        tabStyle: {
+          backgroundColor: "#f2f2f2"
+        },
+        style: {
+          borderTopColor: "#f2f2f2"
+        },
+        activeTintColor: "#ff0000"
       }
     }
   }

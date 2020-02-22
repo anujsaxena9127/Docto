@@ -167,14 +167,29 @@ class Doctors extends Component {
     <View style={styles.navContainer}>
       <View style={styles.statusBar} />
       <View style={styles.navBar}>
-        <TouchableOpacity
-          style={styles.iconLeft}
-          onPress={() => {
-            this.props.navigation.navigate("Adddoctor");
-          }}
-        >
-          <Icon name="add" size={25} color="#fff" />
-        </TouchableOpacity>
+        <View style={styles.navBar}>
+          <TouchableOpacity
+            style={styles.iconLeft}
+            onPress={() => {
+              this.props.navigation.navigate("Adddoctor");
+            }}
+          >
+            <Icon name="add" size={25} color="#fff" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.iconLeft}
+            onPress={() => {
+              console.log("Info");
+              this.props.navigation.navigate("About", {
+                // object: pharmacy,
+                // city: this.state.city,
+                // deliveryBoyNo: pharmacy[cityIndex].deliveryBoyNo
+              });
+            }}
+          >
+            <Icon name="info" size={25} color="#fff" />
+          </TouchableOpacity>
+        </View>
         <View style={styles.navBar}>
           <TouchableOpacity
             style={(styles.iconRight, { marginRight: 5 })}
