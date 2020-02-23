@@ -53,3 +53,33 @@ export function GetMedicineCountIncart(cartData, medicineName) {
   }
   return count;
 }
+
+export function GetWhatsappTextFromCart(
+  cartObject,
+  custormerName,
+  customerAddress,
+  pharmacyName
+) {
+  var string =
+    "Hi, I want to order some medicines.\nI am '" +
+    custormerName +
+    "\n\nI want these medicines with a recipt from\n" +
+    "'" +
+    pharmacyName +
+    "'" +
+    "'.\n\nThe delivery address is\n'" +
+    customerAddress +
+    "'\n\n" +
+    "My order is \n";
+  cartObject.map(medicine => {
+    string =
+      string +
+      medicine.medicineName +
+      "*1\t\t" +
+      "₹" +
+      medicine.priceOfTenTabs +
+      "\n";
+  });
+  string += "\n\nCart total\t\t" + "₹" + GetCartTotalPrice(cartObject);
+  return string;
+}

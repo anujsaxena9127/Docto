@@ -74,7 +74,6 @@ class Pharmacydetail extends Component {
             text: "Cancel",
             onPress: () => {
               console.log("Cancel Pressed");
-              console.log(this.props.navigation.state.routeName);
             },
             style: "cancel"
           },
@@ -126,7 +125,6 @@ class Pharmacydetail extends Component {
   render() {
     renderSearch = this.state.searchData.map(data => {
       if (this.state.searchData.length > 0) {
-        console.log("Printing Doctors");
         return (
           <View key={data.medicineId} style={styles.renderMedicineCards}>
             <View style={{ flex: 5 }}>
@@ -458,15 +456,16 @@ class Pharmacydetail extends Component {
         <TouchableOpacity
           style={styles.iconLeft}
           onPress={() => {
+            const pharmacyObject = this.props.navigation.getParam("object", "");
             const deliveryBoyNo = this.props.navigation.getParam(
               "deliveryBoyNo",
               ""
             );
-            console.log("Cart");
             if (this.state.cart.length > 0) {
               this.props.navigation.navigate("Cart", {
                 cartData: this.state.cart,
-                deliveryBoyNo: deliveryBoyNo
+                deliveryBoyNo: deliveryBoyNo,
+                pharmacyName: pharmacyObject.pharmacyName
               });
             } else {
               alert("Cart empty.");

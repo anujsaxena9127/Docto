@@ -76,25 +76,25 @@ const MainNavigator = createBottomTabNavigator({
         activeTintColor: "#00b020"
       }
     }
-  },
-  Videos: {
-    screen: VideoNavigator,
-    navigationOptions: {
-      tabBarLabel: "Videos",
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="film" color={tintColor} size={25} />
-      ),
-      tabBarOptions: {
-        tabStyle: {
-          backgroundColor: "#f2f2f2"
-        },
-        style: {
-          borderTopColor: "#f2f2f2"
-        },
-        activeTintColor: "#ff0000"
-      }
-    }
   }
+  // Videos: {
+  //   screen: VideoNavigator,
+  //   navigationOptions: {
+  //     tabBarLabel: "Videos",
+  //     tabBarIcon: ({ tintColor }) => (
+  //       <Icon name="film" color={tintColor} size={25} />
+  //     ),
+  //     tabBarOptions: {
+  //       tabStyle: {
+  //         backgroundColor: "#f2f2f2"
+  //       },
+  //       style: {
+  //         borderTopColor: "#f2f2f2"
+  //       },
+  //       activeTintColor: "#ff0000"
+  //     }
+  //   }
+  // }
 });
 
 const Main = createAppContainer(MainNavigator);

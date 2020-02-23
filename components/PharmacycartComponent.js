@@ -10,7 +10,10 @@ import {
 } from "react-native";
 import { OutlinedTextField } from "react-native-material-textfield";
 import { Button, Avatar, SocialIcon, Divider } from "react-native-elements";
-import { GetCartTotalPrice } from "../shared/Functions";
+import {
+  GetCartTotalPrice,
+  GetWhatsappTextFromCart
+} from "../shared/Functions";
 import Styles from "../shared/Styles";
 import { Icon } from "react-native-vector-icons/FontAwesome";
 class Pharmacycart extends React.Component {
@@ -60,21 +63,25 @@ class Pharmacycart extends React.Component {
   fieldRef2 = React.createRef();
 
   sendOnWhatsApp = () => {
-    const deliveryBoyNo = this.props.navigation.getParam("deliveryBoyNo", "");
     let { current: field1 } = this.fieldRef1;
     let { current: field2 } = this.fieldRef2;
+    const pharmacyName = this.props.navigation.getParam("pharmacyName", "");
+    const deliveryBoyNo = this.props.navigation.getParam("deliveryBoyNo", "");
+    const cartData = this.props.navigation.getParam("cartData", "");
+    const string = GetWhatsappTextFromCart(
+      cartData,
+      field1.value(),
+      field2.value(),
+      pharmacyName
+    );
     if (field1.value().length > 3 && field2.value().length > 20) {
       Linking.openURL(
-        "whatsapp://send?text=Hello!! I Want to Make an Appointment. My name is " +
-          field1.value() +
-          " and my address is " +
-          field2.value() +
-          "&phone=+91" +
-          deliveryBoyNo
+        "whatsapp://send?text=" + string + "&phone=+91" + deliveryBoyNo
       );
     } else {
       alert("Please Enter the details properly!!!");
     }
+    console.log(string);
   };
 
   render() {
